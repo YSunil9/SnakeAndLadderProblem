@@ -6,6 +6,7 @@
         {
             Player player = new Player();
             Player.Pos1();
+            Player.RollDice();
         }
     }
 }
