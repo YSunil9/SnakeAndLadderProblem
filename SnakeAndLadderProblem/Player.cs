@@ -16,31 +16,37 @@ namespace SnakeAndLadderProblem
         }
         public static void RollDice()
         {
-            int position = 0;
+            int position = 0, count=0;
             while (position < 100)
             {               
             Random random = new Random();
             int dice = random.Next(6);
             dice = dice + 1;
-            Console.WriteLine("The Player Rolls The Dice & Get Number:" + dice);          
+            Console.WriteLine("The Player Rolls The Dice & Get Number:" + dice);
+                Console.WriteLine("Dice Num : " + dice);
+                count++;
                 int option = random.Next(0, 3);
                 switch (option)
                 {
                     case 1:
                         position += dice;
                         Console.WriteLine("Ladder");
-                        
+                        if (position > 100)
+                        {
+                            position -= dice;
+                        }
                         break;
                     case 2:
                         position -= dice;
                         Console.WriteLine("Snake");                      
-                       
+                        
                         break;
                     default:
                         Console.WriteLine("No Play");
                         break;
                 }
                 Console.WriteLine("Current Position of player is " + position);
+                Console.WriteLine("The number of times the dice was played: " + count);
             }
         }
     }
