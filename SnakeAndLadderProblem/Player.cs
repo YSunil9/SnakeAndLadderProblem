@@ -29,18 +29,12 @@ namespace SnakeAndLadderProblem
                     case 1:
                         position += dice;
                         Console.WriteLine("Ladder");
-                        if (position > 100)
-                        {
-                            position -= dice;
-                        }
+                        
                         break;
                     case 2:
                         position -= dice;
                         Console.WriteLine("Snake");                      
-                        if (position < 0)
-                        {
-                            position = 0;
-                        }
+                       
                         break;
                     default:
                         Console.WriteLine("No Play");
